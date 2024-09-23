@@ -188,10 +188,10 @@ a {
         display: block;
     }
     .sidebar {
-        width: 220px;
+        transform: translateX(-100%); /* Hide sidebar by default on mobile */
     }
-    .sidebar.hidden + .content {
-        margin-left: 0;
+    .sidebar.hidden {
+        transform: translateX(0); /* Show sidebar when not hidden */
     }
     .content {
         margin-left: 0; /* Ensure content does not shift */
