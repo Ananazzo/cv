@@ -4,6 +4,7 @@ body {
     font-family: "Roboto", sans-serif;
     display: flex;
     height: 100vh;
+    overflow-x: hidden; /* This prevents horizontal scrolling */
 }
 
 .sidebar {
@@ -13,6 +14,15 @@ body {
     color: #F5F5F5;
     padding: 20px;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+    position: fixed; /* Fix position to prevent it from affecting content width */
+    left: 0;
+    top: 0;
+    z-index: 1000; /* Keep sidebar on top */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
 }
 
 .sidebar_element {
@@ -64,12 +74,17 @@ a {
     box-sizing: border-box;
     background-color: #F5F5F5;
     overflow-y: auto;
+    margin-left: 250px; /* Default margin for desktop */
+    transition: margin-left 0.3s ease; /* Smooth transition when sidebar is toggled */
+}
+
+.content.full-width {
+    margin-left: 0; /* Full width when sidebar is hidden */
 }
 
 .name h1 {
     font-size: 2.5em;
     margin-bottom: 2px;
-    border-bottom: none; 
 }
 
 .name p {
@@ -155,19 +170,39 @@ a {
     color: #F5F5F5;
 }
 
+.toggle-button {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px; /* Move button to the right */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure toggle button is above the sidebar */
+}
+
 @media screen and (max-width: 650px) {
+    .toggle-button {
+        display: block;
+    }
     .sidebar {
         width: 220px;
     }
-
-    .content {
-        padding: 10px;
+    .sidebar.hidden + .content {
+        margin-left: 0;
     }
-
+    .content {
+        margin-left: 0; /* Ensure content does not shift */
+        transition: margin-left 0.3s ease;
+    }
+    .content.full-width {
+        margin-left: 0;
+    }
     .name h1 {
         font-size: 2em;
     }
-
     .name p {
         font-size: 1em;
     }

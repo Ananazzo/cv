@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sidebar">
+    <button id="toggle-sidebar" class="toggle-button">
+        <span class="material-icons">menu</span>
+    </button>
+    <div class="sidebar hidden">
         <div class="sidebar_element">
             <h1>Yhteystiedot</h1>
-            <p class="contact-item">
-                <span class="material-icons">phone</span>+358 45 1530 338
-            </p>
             <p class="contact-item">
                 <a href="mailto:Ananazx6@gmail.com" class="contact-link">
                     <span class="material-icons">email</span>
@@ -25,7 +25,7 @@
                 </a>
             </p>
             <p class="contact-item">
-                <span class="material-icons">home</span>123 Main St, City, Country
+                <span class="material-icons">home</span>21530, Paimio
             </p>
             <p class="contact-item">
                 <a href="https://www.linkedin.com/in/antti-salonen-290777328" target="_blank" class="contact-link">
@@ -129,5 +129,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('toggle-sidebar').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
