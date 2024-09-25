@@ -184,35 +184,36 @@ a {
 }
 
 .skills-grid {
-    display: grid; /* Use CSS Grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 15px; /* Space between grid items */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
 .skill {
-    margin-bottom: 15px; /* Space between skills */
+    margin-bottom: 15px;
 }
 
 .skill span {
-    display: block; /* Make the skill name a block for spacing */
-    font-size: 0.9em; /* Smaller font size for skill names */
-    margin-bottom: 5px; /* Space between skill name and progress bar */
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
 }
 
 .progress-bar {
-    background-color: #e0e0e0; /* Light grey background for the progress bar */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Prevent overflow of the inner progress */
-    height: 15px; /* Set height of the progress bar */
-    width: 95%; /* Full width of the container */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .progress {
-    background-color: #353839; /* Dark gray color for the progress */
-    height: 100%; /* Fill height of the container */
-    transition: width 0.3s ease; /* Smooth transition for width */
-    width: 0; /* Initial width set to 0 */
+    background-color: #353839;
+    height: 20px; /* Height of the progress indicator */
+    transition: width 0.3s ease;
+    width: 50%; /* Example width */
 }
+
 
 .interests {
     display: flex;
@@ -276,6 +277,7 @@ a {
         color: black; /* Use black text for print */
         background: white; /* White background for print */
         margin: 0; /* Reset margins for print */
+        padding-top: 0; /* Reset any padding at the top */
     }
 
     .toggle-button {
@@ -296,15 +298,61 @@ a {
     .content {
         margin-left: 0; /* Remove margin since sidebar is displayed */
         padding: 20px; /* Ensure content has padding */
+        padding-top: 0; /* Remove any padding pushing content down */
     }
 
     .name h1,
     .name p {
         font-size: 1.5em; /* Adjust font sizes for print */
+        margin-top: 0; /* Reduce space above the name */
     }
 
     .section h1 {
         font-size: 1.5em; /* Adjust section headers for print */
+        margin-top: 0; /* Remove top margin to avoid being cut off */
+    }
+
+    .progress-bar {
+        border: 1px solid #000; /* Border for the outer container */
+        background-color: transparent; /* No background color */
+        height: 15px; /* Height of the progress bar */
+        border-radius: 10px; /* Rounded corners for outer container */
+        overflow: hidden; /* Prevent overflow of the inner progress */
+    }
+
+    .progress {
+        background-color: transparent; /* No background color for progress */
+        height: 100%; /* Full height */
+        position: relative; /* Positioning context */
+        border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+    }
+
+    /* Adjust the left border for each skill's progress */
+    .progress-html {
+        border-left: 80px solid #000000; /* 80% filled (example color) */
+        width: 80%; /* Width to represent progress */
+    }
+
+    .progress-css {
+        border-left: 5px solid #000000; /* 70% filled (example color) */
+        width: 70%; /* Width to represent progress */
+    }
+
+    .progress-js {
+        border-left: 5px solid #000000; /* 60% filled (example color) */
+        width: 60%; /* Width to represent progress */
+    }
+
+    .progress-react {
+        border-left: 5px solid #000000; /* 50% filled (example color) */
+        width: 50%; /* Width to represent progress */
+    }
+
+    /* Manually set widths for each progress bar */
+
+    .skills-grid .progress-bar, 
+    .skills-grid .progress {
+        height: 10px !important; /* Smaller height for print */
     }
 
     .contact-item,
@@ -326,25 +374,15 @@ a {
         display: none; /* Prevent display in print */
     }
 
-    /* Optional: Add a footer to print */
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-        color: gray; /* Footer color */
+    /* Adjust margins and layout for print */
+    .name {
+        margin-top: 0; /* Remove excess space above the name */
     }
 
-    .divider {
-        width: 1px; /* Width of the divider */
-        background-color: #2F4F4F; /* Color of the divider */
-        height: 100vh; /* Full height of the viewport */
-        position: fixed; /* Fixed position to keep it in place */
-        left: 250px; /* Position it at the end of the sidebar */
-        top: 0; /* Start from the top */
-        z-index: 999; /* Ensure it's above the content */
+    /* Ensure no element gets cut off at the top */
+    .name,
+    .section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 }
