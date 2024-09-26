@@ -4,7 +4,7 @@ body {
     font-family: "Roboto", sans-serif;
     display: flex;
     height: 100vh;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 .sidebar {
@@ -15,10 +15,10 @@ body {
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
-    position: fixed; /* Fixed position to prevent it from affecting content width */
+    position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000; /* Keep sidebar on top */
+    z-index: 1000; 
 }
 
 .sidebar.hidden {
@@ -74,12 +74,12 @@ a {
     box-sizing: border-box;
     background-color: #F5F5F5;
     overflow-y: auto;
-    margin-left: 250px; /* Default margin for desktop */
-    transition: margin-left 0.3s ease; /* Smooth transition when sidebar is toggled */
+    margin-left: 250px; 
+    transition: margin-left 0.3s ease; 
 }
 
 .content.full-width {
-    margin-left: 0; /* Full width when sidebar is hidden */
+    margin-left: 0; 
 }
 
 .name h1 {
@@ -174,13 +174,13 @@ a {
     display: none;
     position: fixed;
     top: 10px;
-    right: 10px; /* Move button to the right */
+    right: 10px; 
     background-color: #353839;
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
-    z-index: 1001; /* Ensure toggle button is above the sidebar */
+    z-index: 1001; 
 }
 
 .skills-grid {
@@ -192,28 +192,6 @@ a {
 .skill {
     margin-bottom: 15px;
 }
-
-.skill span {
-    display: block;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-}
-
-.progress-bar {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    height: 15px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.progress {
-    background-color: #353839;
-    height: 20px; /* Height of the progress indicator */
-    transition: width 0.3s ease;
-    width: 50%; /* Example width */
-}
-
 
 .interests {
     display: flex;
@@ -247,6 +225,20 @@ a {
     opacity: 1; /* Fully opaque on hover */
 }
 
+meter {
+    height: 15px;
+    border-radius: 10px;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: rgb(39, 39, 39); 
+}
+
+meter::-moz-meter-bar {
+    background: rgb(39, 39, 39);
+}  
+
+
 @media screen and (max-width: 650px) {
     .toggle-button {
         display: block;
@@ -270,10 +262,13 @@ a {
     .name p {
         font-size: 1em;
     }
+    
 }
 
 @media print {
     body {
+        -webkit-print-color-adjust:exact !important;
+        print-color-adjust:exact !important;
         color: black; /* Use black text for print */
         background: white; /* White background for print */
         margin: 0; /* Reset margins for print */
@@ -287,7 +282,6 @@ a {
     .sidebar {
         display: block; /* Ensure sidebar is displayed in print */
         position: relative; /* Change position to relative for print layout */
-        width: auto; /* Set width to auto for better fitting on the page */
         height: auto; /* Allow height to adjust based on content */
         background-color: white; /* Set background to white for print */
         color: black; /* Ensure text is black */
@@ -307,52 +301,13 @@ a {
         margin-top: 0; /* Reduce space above the name */
     }
 
+    .content {
+        background-color: white;
+    }
+
     .section h1 {
         font-size: 1.5em; /* Adjust section headers for print */
         margin-top: 0; /* Remove top margin to avoid being cut off */
-    }
-
-    .progress-bar {
-        border: 1px solid #000; /* Border for the outer container */
-        background-color: transparent; /* No background color */
-        height: 15px; /* Height of the progress bar */
-        border-radius: 10px; /* Rounded corners for outer container */
-        overflow: hidden; /* Prevent overflow of the inner progress */
-    }
-
-    .progress {
-        background-color: transparent; /* No background color for progress */
-        height: 100%; /* Full height */
-        position: relative; /* Positioning context */
-        border-radius: 10px 0 0 10px; /* Rounded corners on the left */
-    }
-
-    /* Adjust the left border for each skill's progress */
-    .progress-html {
-        border-left: 80px solid #000000; /* 80% filled (example color) */
-        width: 80%; /* Width to represent progress */
-    }
-
-    .progress-css {
-        border-left: 5px solid #000000; /* 70% filled (example color) */
-        width: 70%; /* Width to represent progress */
-    }
-
-    .progress-js {
-        border-left: 5px solid #000000; /* 60% filled (example color) */
-        width: 60%; /* Width to represent progress */
-    }
-
-    .progress-react {
-        border-left: 5px solid #000000; /* 50% filled (example color) */
-        width: 50%; /* Width to represent progress */
-    }
-
-    /* Manually set widths for each progress bar */
-
-    .skills-grid .progress-bar, 
-    .skills-grid .progress {
-        height: 10px !important; /* Smaller height for print */
     }
 
     .contact-item,
@@ -378,11 +333,15 @@ a {
     .name {
         margin-top: 0; /* Remove excess space above the name */
     }
-
-    /* Ensure no element gets cut off at the top */
     .name,
     .section {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
+
+    .sidebar_element p span.material-icons,
+    .sidebar_element p span i.fab{
+        color: black  !important;
+    }
+
 }
