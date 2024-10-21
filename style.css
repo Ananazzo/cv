@@ -242,10 +242,10 @@ meter::-moz-meter-bar {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     background-color: white;
-    border: 1px solid #ffffff;
+    border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
     z-index: 1000;
@@ -256,8 +256,8 @@ meter::-moz-meter-bar {
 }
 
 .toggle-language-button img {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
 }
 
 .toggle-language-button:hover {
