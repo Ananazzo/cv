@@ -188,13 +188,13 @@
                 swedish: "Ruotsi: Alkeet",
                 skillsTitle: "Taidot",
                 experienceTitle: "Työkokemus",
-                experience1: "Työelämään tutustuminen (1 week)",
-                experience2: "Työelämäjakso (2.5 months)",
+                experience1: "Työelämään tutustuminen (1 viikko)",
+                experience2: "Työelämäjakso (2.5 kuukautta)",
                 experience3: "Työelämäjakso (2.5 months), Laatukäsikirjaa Turun ammatti-instituutille",
-                experience4: "Kesätyö, Kioskin pito Salon uimarannalla",
+                experience4: "Kesätyö, Kioskin pito kuukautta uimarannalla",
                 educationTitle: "Koulutus",
                 education1: "Peruskoulu",
-                education2: "Tieto- ja viestintätekniikan perustutk, Ohjelmistokehittäjä",
+                education2: "Tieto- ja viestintätekniikan perustutkinto, Ohjelmistokehittäjä",
                 trustTitle: "Luottamustehtävät",
                 trust1: "Neljännen vuoden isonen",
                 interestsTitle: "Kiinnostuksenkohteet",
@@ -207,8 +207,8 @@
                 interestAudio: "Audiovisuaaliset laitteet"
             },
             en: {
-                title: "Resume",
-                contactTitle: "Contact Information",
+                title: "CV",
+                contactTitle: "Contact Info",
                 languageTitle: "Language Skills",
                 finnish: "Finnish: Native",
                 english: "English: Fluent",
@@ -228,7 +228,7 @@
                 interestCar: "Cars",
                 interestComputer: "Computers",
                 interestGames: "Games",
-                interestNature: "Hiking/Nature",
+                interestNature: "Nature",
                 interestCoding: "Programming",
                 interestElectronics: "Electronics",
                 interestAudio: "Audio-Visual Devices"
@@ -268,6 +268,7 @@
             const newLanguage = currentLanguage === 'fi' ? 'en' : 'fi';
             localStorage.setItem('language', newLanguage);
             setLanguage(newLanguage);
+            document.documentElement.lang = newLanguage;
             const flagIcon = newLanguage === 'fi' ? 'https://hatscripts.github.io/circle-flags/flags/gb.svg' : 'https://hatscripts.github.io/circle-flags/flags/fi.svg';
             $('#toggle-language img').attr('src', flagIcon);
             $('#toggle-language span').text(newLanguage.toUpperCase());
@@ -276,6 +277,7 @@
         $(document).ready(function() {
             const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('fi') ? 'fi' : 'en');
             setLanguage(savedLanguage);
+            document.documentElement.lang = savedLanguage;
             const flagIcon = savedLanguage === 'fi' ? 'https://hatscripts.github.io/circle-flags/flags/gb.svg' : 'https://hatscripts.github.io/circle-flags/flags/fi.svg';
             $('#toggle-language img').attr('src', flagIcon);
             $('#toggle-language span').text(savedLanguage.toUpperCase());
