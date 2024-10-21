@@ -174,7 +174,7 @@
         </div>
 
     <button id="toggle-language" class="toggle-language-button">
-        <img src="https://flagsapi.com/FI/flat/64.png" alt="FI">
+        <img src="https://hatscripts.github.io/circle-flags/flags/fi.svg" alt="FI">
     </button>
 
     <script>
@@ -268,7 +268,7 @@
             const newLanguage = currentLanguage === 'fi' ? 'en' : 'fi';
             localStorage.setItem('language', newLanguage);
             setLanguage(newLanguage);
-            const flagIcon = newLanguage === 'fi' ? 'https://flagsapi.com/GB/flat/64.png' : 'https://flagsapi.com/FI/flat/64.png';
+            const flagIcon = newLanguage === 'fi' ? 'https://hatscripts.github.io/circle-flags/flags/gb.svg' : 'https://hatscripts.github.io/circle-flags/flags/fi.svg';
             $('#toggle-language img').attr('src', flagIcon);
             $('#toggle-language span').text(newLanguage.toUpperCase());
         }
@@ -276,7 +276,7 @@
         $(document).ready(function() {
             const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('fi') ? 'fi' : 'en');
             setLanguage(savedLanguage);
-            const flagIcon = savedLanguage === 'fi' ? 'https://flagsapi.com/GB/flat/64.png' : 'https://flagsapi.com/FI/flat/64.png';
+            const flagIcon = savedLanguage === 'fi' ? 'https://hatscripts.github.io/circle-flags/flags/gb.svg' : 'https://hatscripts.github.io/circle-flags/flags/fi.svg';
             $('#toggle-language img').attr('src', flagIcon);
             $('#toggle-language span').text(savedLanguage.toUpperCase());
 
