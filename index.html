@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,8 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <title id="title">CV</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <button id="toggle-sidebar" class="toggle-button">
@@ -17,7 +18,7 @@
     </button>
     <div class="sidebar">
         <div class="sidebar_element">
-            <h1>Yhteystiedot</h1>
+            <h1 id="contact-title">Yhteystiedot</h1>
             <p class="contact-item">
                 <a href="mailto:Ananazx6@gmail.com" class="contact-link">
                     <span class="material-icons">email</span>
@@ -39,13 +40,13 @@
             </p>
         </div>
         <div class="sidebar_element">
-            <h1>Kielitaito</h1>
-            <p><span class="material-icons">language</span> Suomi: Äidinkieli</p>
-            <p><span class="material-icons">language</span> Englanti: Sujuva</p>
-            <p><span class="material-icons">language</span> Ruotsi: Alkeet</p>
+            <h1 id="language-title">Kielitaito</h1>
+            <p><span class="material-icons">language</span> <span id="finnish">Suomi: Äidinkieli</span></p>
+            <p><span class="material-icons">language</span> <span id="english">Englanti: Sujuva</span></p>
+            <p><span class="material-icons">language</span> <span id="swedish">Ruotsi: Alkeet</span></p>
         </div>
         <div class="sidebar_element">
-            <h1>Taidot</h1>
+            <h1 id="skills-title">Taidot</h1>
             <div class="skills-grid">
                 <div class="skill">
                     <span><i class="fa-brands fa-html5"></i> HTML</span>
@@ -98,84 +99,198 @@
         </div>
 
         <div class="section">
-            <h1>Työkokemus</h1>
+            <h1 id="experience-title">Työkokemus</h1>
             <div class="timeline-entry">
                 <span class="year">2021</span>
                 <div>
                     <h2>Aso parturi kampaamo</h2>
-                    <p>Työelämään tutustuminen (1 week)</p>
+                    <p id="experience-1">Työelämään tutustuminen (1 week)</p>
                 </div>
             </div>
             <div class="timeline-entry">
                 <span class="year">2023</span>
                 <div>
                     <h2>Euronics Paimio, Vistaviso</h2>
-                    <p>Työelämäjakso (2.5 months)</p>
+                    <p id="experience-2">Työelämäjakso (2.5 months)</p>
                 </div>
             </div>
             <div class="timeline-entry">
                 <span class="year">2024</span>
                 <div>
                     <h2>Turun ammatti-instituutti</h2>
-                    <p>Työelämäjakso (2.5 months), Laatukäsikirjaa Turun ammatti-instituutille</p>
+                    <p id="experience-3">Työelämäjakso (2.5 months), Laatukäsikirjaa Turun ammatti-instituutille</p>
                 </div>
             </div>
             <div class="timeline-entry">
                 <span class="year">2024</span>
                 <div>
                     <h2>Mesuca basket</h2>
-                    <p>Kesätyö, Kioskin pito Salon uimarannalla</p>
+                    <p id="experience-4">Kesätyö, Kioskin pito Salon uimarannalla</p>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h1>Koulutus</h1>
+            <h1 id="education-title">Koulutus</h1>
             <div class="timeline-entry">
                 <span class="year">2013-2022</span>
                 <div>
                     <h2>Vistan koulu</h2>
-                    <p>Peruskoulu</p>
+                    <p id="education-1">Peruskoulu</p>
                 </div>
             </div>
             <div class="timeline-entry">
                 <span class="year">2022-2025</span>
                 <div>
                     <h2>Turun ammatti-instituutti</h2>
-                    <p>Tieto- ja viestintätekniikan perustutkinto, Ohjelmistokehittäjä</p>
+                    <p id="education-2">Tieto- ja viestintätekniikan perustutkinto, Ohjelmistokehittäjä</p>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h1>Luottamustehtävät</h1>
+            <h1 id="trust-title">Luottamustehtävät</h1>
             <div class="timeline-entry">
                 <span class="year">2022-</span>
                 <div>
                     <h2>Isoskoulutus</h2>
                     <p>Paimion seurakunta</p>
-                    <p>Neljännen vuoden isonen</p>
+                    <p id="trust-1">Neljännen vuoden isonen</p>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h1>Kiinnostuksenkohteet</h1>
+            <h1 id="interests-title">Kiinnostuksenkohteet</h1>
             <div class="interests">
-                <span class="material-icons" title="Autot">directions_car</span>
-                <span class="material-icons" title="Tietokoneet">computer</span>
-                <span class="material-icons" title="Pelit">sports_esports</span>
-                <span class="material-icons" title="Retkeily/Luonto">terrain</span>
-                <span class="material-icons" title="Ohjelmointi">code</span>
-                <span class="material-icons" title="Elektroniikka">memory</span>
-                <span class="material-icons" title="Audiovisuaaliset laitteet">headphones</span>
+                <span class="material-icons" id="interest-car" title="Autot">directions_car</span>
+                <span class="material-icons" id="interest-computer" title="Tietokoneet">computer</span>
+                <span class="material-icons" id="interest-games" title="Pelit">sports_esports</span>
+                <span class="material-icons" id="interest-nature" title="Retkeily/Luonto">terrain</span>
+                <span class="material-icons" id="interest-coding" title="Ohjelmointi">code</span>
+                <span class="material-icons" id="interest-electronics" title="Elektroniikka">memory</span>
+                <span class="material-icons" id="interest-audio" title="Audiovisuaaliset laitteet">headphones</span>
             </div>
         </div>
 
+    <button id="toggle-language" class="toggle-language-button">
+        <img src="https://flagsapi.com/FI/flat/64.png" alt="FI">
+    </button>
+
     <script>
-        document.getElementById('toggle-sidebar').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('hidden');
-            document.querySelector('.content').classList.toggle('full-width');
+        const translations = {
+            fi: {
+                title: "CV",
+                contactTitle: "Yhteystiedot",
+                languageTitle: "Kielitaito",
+                finnish: "Suomi: Äidinkieli",
+                english: "Englanti: Sujuva",
+                swedish: "Ruotsi: Alkeet",
+                skillsTitle: "Taidot",
+                experienceTitle: "Työkokemus",
+                experience1: "Työelämään tutustuminen (1 week)",
+                experience2: "Työelämäjakso (2.5 months)",
+                experience3: "Työelämäjakso (2.5 months), Laatukäsikirjaa Turun ammatti-instituutille",
+                experience4: "Kesätyö, Kioskin pito Salon uimarannalla",
+                educationTitle: "Koulutus",
+                education1: "Peruskoulu",
+                education2: "Tieto- ja viestintätekniikan perustutk, Ohjelmistokehittäjä",
+                trustTitle: "Luottamustehtävät",
+                trust1: "Neljännen vuoden isonen",
+                interestsTitle: "Kiinnostuksenkohteet",
+                interestCar: "Autot",
+                interestComputer: "Tietokoneet",
+                interestGames: "Pelit",
+                interestNature: "Retkeily/Luonto",
+                interestCoding: "Ohjelmointi",
+                interestElectronics: "Elektroniikka",
+                interestAudio: "Audiovisuaaliset laitteet"
+            },
+            en: {
+                title: "Resume",
+                contactTitle: "Contact Information",
+                languageTitle: "Language Skills",
+                finnish: "Finnish: Native",
+                english: "English: Fluent",
+                swedish: "Swedish: Basic",
+                skillsTitle: "Skills",
+                experienceTitle: "Work Experience",
+                experience1: "Work Introduction (1 week)",
+                experience2: "Work Period (2.5 months)",
+                experience3: "Work Period (2.5 months), Quality Manual for Turku Vocational Institute",
+                experience4: "Summer Job, Kiosk at Salo Beach",
+                educationTitle: "Education",
+                education1: "Primary School",
+                education2: "Vocational Qualification in Information and Communications Technology, Software Developer",
+                trustTitle: "Trust Positions",
+                trust1: "Fourth Year Leader",
+                interestsTitle: "Interests",
+                interestCar: "Cars",
+                interestComputer: "Computers",
+                interestGames: "Games",
+                interestNature: "Hiking/Nature",
+                interestCoding: "Programming",
+                interestElectronics: "Electronics",
+                interestAudio: "Audio-Visual Devices"
+            }
+        };
+
+        function setLanguage(language) {
+            $('#title').text(translations[language].title);
+            $('#contact-title').text(translations[language].contactTitle);
+            $('#language-title').text(translations[language].languageTitle);
+            $('#finnish').text(translations[language].finnish);
+            $('#english').text(translations[language].english);
+            $('#swedish').text(translations[language].swedish);
+            $('#skills-title').text(translations[language].skillsTitle);
+            $('#experience-title').text(translations[language].experienceTitle);
+            $('#experience-1').text(translations[language].experience1);
+            $('#experience-2').text(translations[language].experience2);
+            $('#experience-3').text(translations[language].experience3);
+            $('#experience-4').text(translations[language].experience4);
+            $('#education-title').text(translations[language].educationTitle);
+            $('#education-1').text(translations[language].education1);
+            $('#education-2').text(translations[language].education2);
+            $('#trust-title').text(translations[language].trustTitle);
+            $('#trust-1').text(translations[language].trust1);
+            $('#interests-title').text(translations[language].interestsTitle);
+            $('#interest-car').attr('title', translations[language].interestCar);
+            $('#interest-computer').attr('title', translations[language].interestComputer);
+            $('#interest-games').attr('title', translations[language].interestGames);
+            $('#interest-nature').attr('title', translations[language].interestNature);
+            $('#interest-coding').attr('title', translations[language].interestCoding);
+            $('#interest-electronics').attr('title', translations[language].interestElectronics);
+            $('#interest-audio').attr('title', translations[language].interestAudio);
+        }
+
+        function toggleLanguage() {
+            const currentLanguage = localStorage.getItem('language') || (navigator.language.startsWith('fi') ? 'fi' : 'en');
+            const newLanguage = currentLanguage === 'fi' ? 'en' : 'fi';
+            localStorage.setItem('language', newLanguage);
+            setLanguage(newLanguage);
+            const flagIcon = newLanguage === 'fi' ? 'https://flagsapi.com/GB/flat/64.png' : 'https://flagsapi.com/FI/flat/64.png';
+            $('#toggle-language img').attr('src', flagIcon);
+            $('#toggle-language span').text(newLanguage.toUpperCase());
+        }
+
+        $(document).ready(function() {
+            const savedLanguage = localStorage.getItem('language') || (navigator.language.startsWith('fi') ? 'fi' : 'en');
+            setLanguage(savedLanguage);
+            const flagIcon = savedLanguage === 'fi' ? 'https://flagsapi.com/GB/flat/64.png' : 'https://flagsapi.com/FI/flat/64.png';
+            $('#toggle-language img').attr('src', flagIcon);
+            $('#toggle-language span').text(savedLanguage.toUpperCase());
+
+            $('#toggle-language').click(toggleLanguage);
+
+            $('#toggle-sidebar').click(function() {
+                $('.sidebar').toggleClass('hidden');
+                $('.content').toggleClass('full-width');
+            });
+
+            $('#toggle-language img').on('error', function() {
+                $(this).hide();
+                $('#toggle-language span').show();
+            });
         });
     </script>
 </body>

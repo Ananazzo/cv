@@ -238,6 +238,31 @@ meter::-moz-meter-bar {
     background: rgb(39, 39, 39);
 }  
 
+.toggle-language-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-language-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.toggle-language-button:hover {
+    background-color: #f0f0f0;
+}
 
 @media screen and (max-width: 650px) {
     .toggle-button {
