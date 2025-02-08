@@ -19,6 +19,7 @@ body {
     left: 0;
     top: 0;
     z-index: 1000; 
+    overflow-y: scroll;
 }
 
 .sidebar.hidden {
@@ -291,6 +292,9 @@ meter::-moz-meter-bar {
 }
 
 @media print {
+    button {
+        display: none;
+    }
     body {
         -webkit-print-color-adjust:exact !important;
         print-color-adjust:exact !important;
