@@ -292,8 +292,8 @@ meter::-moz-meter-bar {
 }
 
 @media print {
-    button {
-        display: none;
+    .toggle-language-button {
+        display: none !important;
     }
     body {
         -webkit-print-color-adjust:exact !important;
